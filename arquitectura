@@ -1,0 +1,54 @@
+Arquitectura
+Polkadot es una multichain heterogénea con seguridad escalable y un protocolo de interoperabilidad.
+
+Es heterogénea porque es completamente flexible y no asume nada acerca de la naturaleza o estructura
+de las chains en la red. 
+
+Incluso sistemas non-blockchain u otras estructuras de datos pueden convertirse en parachains
+si cumplen con un conjunto de criterios.
+
+Polkadot puede considerarse como el equivalente a un set de chains independientes
+(por ejemplo Ethereum, Ethereum Classic y Bitcoin) con importantes funcionalidades adicionales: 
+pooled security y trust-free interchain transactability.
+
+Muchas de las parachains nativas de Polkadot serán escritas usando un Polkadot Runtime environment SDK,
+como Substrate de Parity Technologies. 
+
+
+Relay Chain
+La Relay Chain es la cadena central de Polkadot.
+Todos los validators de Polkadot son staked en la Relay Chain en DOT y realizan la validación de la Relay Chain.
+
+La Relay Chain se compone de un pequeño número de tipos de transacciones que incluyen maneras
+de interactuar con el mecanismo de gobernanza, auctions de parachains y participación en NPoS.
+
+
+Parachains
+La mayor parte de la computación que suceda en la red Polkadot será delgada a implementaciones 
+de parachains específicas para manejar los distintos casos de uso.
+
+Polkadot no impone restricciones sobre lo que las parachains pueden hacer, pero estas deben 
+ser capaces de generar una prueba que pueda ser validad por los validators asignados a la parachain.
+Algunas parachains pueden ser específicas para una Dapp, otras pueden enfocarse en features específicas
+como privacidad o escalabilidad. Incluso pueden existir arquitecturas experimentales que no necesariamente 
+sean de naturaleza blockchains. 
+
+
+Shared state
+Polkadot tiene un shared state entre la Relay Chain y todas las parachains conectadas.
+Si la Relay Chain debe revertir (a un estado anterior?) por algún motivo, entonces todas las
+parachains también deben revertir.
+Esto permite asegurar que la validez del sistema entero persiste y que ninguna parte individual es corruptible.
+
+Las asunsiones de verdad al usar parachains son sólo aquellas de los validators de la Relay Chain.
+Como se espera que este conjunto de validators sea seguro gracias a la gran cantidad de stake depositado
+para respaldarlo, es deseable que las parachains se beneficien de esta seguridad. 
+
+
+Whiteboard Series
+For a video overview of the architecture of Polkadot watch the video below for the whiteboard interview 
+with W3F researcher Alistair Stewart:
+
+POCOS CLAROS:
+https://youtu.be/xBfC6uTjvbM
+https://www.youtube.com/watch?v=mhJXsOKoSdg&ab_channel=NEAR
